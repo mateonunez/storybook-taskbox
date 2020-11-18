@@ -1,4 +1,4 @@
-import TaskList from './TaskList'
+import PureTaskList from './PureTaskList'
 import { taskData, actionsData } from './Task.stories'
 
 const paddedList = () => ({
@@ -28,8 +28,8 @@ export const withPinnedTaskData = [
 ]
 
 export const Default = () => ({
-  components: { TaskList },
-  template: `<task-list :tasks="tasks" @archive-task="onArchiveTask" @pin-task="onPinTask"/>`,
+  components: { PureTaskList },
+  template: `<pure-task-list :tasks="tasks" @archive-task="onArchiveTask" @pin-task="onPinTask"/>`,
   props: {
     tasks: {
       default: () => defaultTaskData
@@ -39,8 +39,8 @@ export const Default = () => ({
 })
 
 export const WithPinnedTasks = () => ({
-  components: { TaskList },
-  template: `<task-list :tasks="tasks" @archive-task="onArchiveTask" @pin-task="onPinTask"/>`,
+  components: { PureTaskList },
+  template: `<pure-task-list :tasks="tasks" @archive-task="onArchiveTask" @pin-task="onPinTask"/>`,
   props: {
     tasks: {
       default: () => withPinnedTaskData
@@ -50,13 +50,13 @@ export const WithPinnedTasks = () => ({
 })
 
 export const Loading = () => ({
-  components: { TaskList },
-  template: `<task-list loading @archive-task="onArchiveTask" @pin-task="onPinTask"/>`,
+  components: { PureTaskList },
+  template: `<pure-task-list loading @archive-task="onArchiveTask" @pin-task="onPinTask"/>`,
   methods: actionsData
 })
 
 export const Empty = () => ({
-  components: { TaskList },
-  template: `<task-list @archive-task="onArchiveTask" @pin-task="onPinTask"/>`,
+  components: { PureTaskList },
+  template: `<pure-task-list @archive-task="onArchiveTask" @pin-task="onPinTask"/>`,
   methods: actionsData
 })
